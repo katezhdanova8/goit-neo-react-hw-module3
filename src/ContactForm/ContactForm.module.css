@@ -1,0 +1,44 @@
+.ContactForm {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ContactForm__field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2x;
+}
+
+.ContactForm__field input {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ContactForm__field span {
+  color: red;
+  font-size: 0.875rem;
+}
+
+.ContactForm button {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 8px 16px;
+  width: fit-content;
+}
+
+.ContactForm button:hover {
+  background-color: #e5e5e5;
+}
