@@ -1,6 +1,6 @@
 import { Formik, Field, Form } from 'formik';
 import css from './ContactForm.module.css';
-import { number, object, string } from 'yup';
+import { object, string } from 'yup';
 
 const validationSchema = object({
   name: string()

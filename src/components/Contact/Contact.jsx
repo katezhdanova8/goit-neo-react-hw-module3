@@ -1,6 +1,6 @@
 import css from './Contact.module.css';
-import UserIcon from '../assets/user.svg';
-import PhoneIcon from '../assets/phone.svg';
+import UserIcon from '../../assets/user.svg';
+import PhoneIcon from '../../assets/phone.svg';
 
 const Contact = ({ name, number, onDelete }) => {
   return (
