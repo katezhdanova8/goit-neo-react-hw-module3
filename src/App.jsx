@@ -25,13 +25,12 @@ const storage = {
 };
 
 function App() {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState(() => storage.getContacts());
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    const contacts = storage.getContacts();
-    setContacts(contacts);
-  }, []);
+    storage.setContacts(contacts);
+  }, [contacts]);
 
   const filteredContacts = useMemo(() => {
     return !!search.length
@@ -40,9 +39,8 @@ function App() {
   }, [contacts, search]);
 
   const handleDeleteContact = (id) => {
-    setContacts(contacts.filter(contact => contact.id !== id));
-    storage.setContacts(contacts.filter(contact => contact.id !== id));
-  }
+    setContacts(prevContacts => prevContacts.filter(contact => contact.id !== id));
+  };
 
   const handleAddContact = (name, number) => {
     const newContact = {
@@ -51,10 +49,8 @@ function App() {
       number,
     };
 
-    const updatedContacts = [newContact, ...contacts];
-    setContacts(updatedContacts);
-    storage.setContacts(updatedContacts);
-  }
+    setContacts(prevContacts => [newContact, ...prevContacts]);
+  };
 
   return (
     <div className={css.App}>
